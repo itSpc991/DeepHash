@@ -3,10 +3,10 @@ from torchvision import models
 
 
 class AlexNet(nn.Module):
-    def __init__(self, hash_bit, pretrained=True):
+    def __init__(self, hash_bit, alex_model="AlexNet", pretrained=True):
         super(AlexNet, self).__init__()
         # 将 AlexNet 模型的特征提取部分(卷积层和池化层)保存到 features 中
-        model_alexnet = models.alexnet(pretrained=pretrained)
+        model_alexnet = alexnet_dict[alex_model](pretrained=pretrained)
         self.features = model_alexnet.features
         # 创建两个全连接层 fc1,fc2 复制预训练模型的权重和偏置
         fc1 = nn.Linear(256 * 6 * 6, 4096)
