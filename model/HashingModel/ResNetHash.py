@@ -40,6 +40,6 @@ class ResNet(nn.Module):
         return y
 
 
+# ResNet50表示有50层卷积神经网络
 resnet_dict = {"ResNet18": models.resnet18, "ResNet34": models.resnet34, "ResNet50": models.resnet50,
                "ResNet101": models.resnet101, "ResNet152": models.resnet152}
-

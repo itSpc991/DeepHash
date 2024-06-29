@@ -18,7 +18,7 @@ class AlexNet(nn.Module):
         fc2.bias = model_alexnet.classifier[4].bias
 
         self.hash_layer = nn.Sequential(
-            # 正则化,防止过拟合
+            # 随机失活,防止过拟合
             nn.Dropout(),
             fc1,
             # ReLU激活,直接修改tensor节约内存
